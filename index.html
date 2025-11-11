@@ -20,3 +20,64 @@
   <input type="search" placeholder="Search long...">
   <button type="submit">Search</button>
 </form>
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Link Share</title>
+</head>
+<body>
+  <h1>Link Share</h1>
+  <button id="sign-in-button">Sign In</button>
+  <div id="links"></div>
+
+  <script src="https:                                                             
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+  <script>
+    // Initialize Firebase
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_AUTH_DOMAIN",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_STORAGE_BUCKET",
+      messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    const auth = firebase.auth();
+
+    // Sign in button click event
+    document.getElementById('sign-in-button').addEventListener('click', () => {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      auth.signInWithPopup(provider).then((result) => {
+        console.log('Signed in user:', result.user);
+        // Display links to user
+        displayLinks();
+      }).catch((error) => {
+        console.error('Error signing in:', error);
+      });
+    });
+
+    // Display links to user
+    function displayLinks() {
+      // Get links from database or API
+      const links = [
+        { url: 'https:                                            
+        { url: 'https://www.example.com/link2', title: 'Link 2' },
+      ];
+
+      const linksDiv = document.getElementById('links');
+      linksDiv.innerHTML = '';
+
+      links.forEach((link) => {
+        const linkElement = document.createElement('a');
+        linkElement.href = link.url;
+        linkElement.textContent = link.title;
+        linksDiv.appendChild(linkElement);
+      });
+    }
+  </script>
+</body>
+</html>
