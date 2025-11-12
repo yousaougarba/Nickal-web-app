@@ -14,23 +14,22 @@
 <a href="https://www.tiktok.com/t/ZP8DgHr3m/"><h2>click and like✅</h2></a>
 
  <!DOCTYPE html>
-  <html>
-   <body>
-    <button type="bar"
-   onclick="document.getElementById
-   ('demo').innerHTML = menu bar()"><h5>register here!</h5></button>
-    addEventListener('fetch', async (event) => {
-  const key = 'd1f573af00294c35b4371e3a01fb6594';
-  const value = 'Hello, World!';
+<html>
+<head>
+  <title>Workers KV</title>
+</head>
+<body>
+  <h1>Workers kv</h1>
+  <input id="d1f573af00294c35b4371e3a01fb6594" type="button" placeholder="d1f573af00294c35b4371e3a01fb6594">
+  <input id="value" type="button" placeholder="Enter value">
+  <button id="store-btn">Store</button>
+  <button id="retrieve-btn">Retrieve</button>
+  <div id="result"></div>
 
-  // Store data in Workers KV
-  await KV.put(key, value);
+  <script>
+    const keyInput = document.getElementById('key');
+    const valueInput = document.getElementById('value');
+    const storeBtn = document.getElementById('store-btn');
+    const retrieveBtn = document.getElementById('retrieve-btn');
+    const resultDiv = document.getElementById
 
-  // Retrieve data from Workers KV
-  const storedValue = await KV.get(key);
-  console.log(storedValue); // Output: Hello, World!
-
-  event.respondWith(new Response('Hello, World!'));
-});
-  </html>
- </body>
